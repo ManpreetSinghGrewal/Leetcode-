@@ -5,7 +5,7 @@ class Solution {
        
        int i =0;int j=0;
        double sum = 0;
-       double maxsum = Double.NEGATIVE_INFINITY;
+       double maxsum = -999999;
        double avg = 0;
        while(j<n){
            sum += arr[j];
