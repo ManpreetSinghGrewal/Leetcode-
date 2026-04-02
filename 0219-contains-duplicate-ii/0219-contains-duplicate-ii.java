@@ -6,14 +6,14 @@ class Solution {
                 map.put(nums[i],i);
             }
             else{
-                int diff = Math.abs(i-map.get(nums[i]));
+                int diff = Math.abs(i - map.get(nums[i]));
                 if(diff<=k){
                     return true;
                 }
-                map.put(nums[i], i);
+                map.put(nums[i],i);
             }
-            
         }
+           
         return false;
     }
 }
