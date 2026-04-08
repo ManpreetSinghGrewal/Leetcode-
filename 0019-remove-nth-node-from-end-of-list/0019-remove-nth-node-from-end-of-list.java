@@ -30,21 +30,38 @@ class Solution {
         // }
         // temp.next = temp.next.next;
         // return head;
-          ListNode  current = head;
-          int l = 0;
-          while(current != null){
+        //   ListNode  current = head;
+        //   int l = 0;
+        //   while(current != null){
+        //     l++;
+        //     current = current.next;
+        //   }
+        //   if(n == l){
+        //     head = head.next;
+        //     return head;
+        //   }
+        //   current = head;
+        //   for(int i =0;i<l-n-1;i++){
+        //     current = current.next;
+        //   }
+        //   current.next = current.next.next;
+        //   return head;
+        int l = 0;
+        ListNode temp = head;
+        while(temp!= null){
             l++;
-            current = current.next;
-          }
-          if(n == l){
+            temp = temp.next;
+        }
+        if(l == n){
             head = head.next;
             return head;
-          }
-          current = head;
-          for(int i =0;i<l-n-1;i++){
+        }
+        ListNode current = head;
+        for(int i =0;i<l-n-1;i++){
             current = current.next;
-          }
-          current.next = current.next.next;
-          return head;
+        }
+        current.next = current.next.next;
+        return head;
+
     }
 }
