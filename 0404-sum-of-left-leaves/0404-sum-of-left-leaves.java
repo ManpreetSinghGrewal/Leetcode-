@@ -23,5 +23,6 @@ class Solution {
         sum += sumOfLeftLeaves(root.left);
         sum += sumOfLeftLeaves(root.right);
         return sum;
+        
     }
 }
