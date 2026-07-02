@@ -9,17 +9,15 @@ class Solution {
         map.put('D',500);
         map.put('M',1000);
         char chars[] = s.toCharArray();
-        int result = 0;
-        int i, j;
-        for(i = 0 , j = 1; j < chars.length; i++ , j++){
-            if(map.get(chars[i])>= map.get(chars[j])){
-                result += map.get(chars[i]);
+        int res = 0;
+        for(int i =0;i<chars.length;i++){
+            if(i<chars.length-1 && map.get(chars[i]) < map.get(chars[i+1])){
+                res-=map.get(chars[i]);
             }
             else{
-                result -= map.get(chars[i]);
+                res+=map.get(chars[i]);
             }
         }
-        result += map.get(chars[i]);
-        return result;
+        return res;
     }
 }
