@@ -8,7 +8,6 @@ class Solution {
                 sum+=nums[j];
                 if(sum==k){
                     c++;
-                    
                 }
             }
         }
