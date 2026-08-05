@@ -1,20 +1,17 @@
 class NumArray {
-    int[] newArr;
+    private int[] psum;
     public NumArray(int[] nums) {
-        newArr = new int[nums.length];
-        newArr[0] = nums[0];
         for(int i =1;i<nums.length;i++){
-            newArr[i] = newArr[i-1] + nums[i];
+            nums[i] += nums[i-1];
         }
+        this.psum = nums;
     }
     
     public int sumRange(int left, int right) {
         if(left == 0){
-            return newArr[right];
+            return psum[right];
         }
-        else{
-            return newArr[right] - newArr[left-1];
-        }
+        return psum[right] - psum[left-1];
     }
 }
 
