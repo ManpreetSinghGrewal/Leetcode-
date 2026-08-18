@@ -1,20 +1,18 @@
 class Solution {
-    public int dp(int i ,int nums[],Map<Integer,Integer> cache ){
-        if(i==0){
-            return nums[i];
-        }
-        if(i==1){
-            return Math.max(nums[1],nums[0]);
-        }
-        if(cache.containsKey(i)){
-            return cache.get(i);
-        }
-        cache.put(i,Math.max(nums[i]+dp(i-2,nums,cache), dp(i-1,nums,cache)));
-        return cache.get(i); 
-
-    }
     public int rob(int[] nums) {
-        HashMap<Integer,Integer> map = new HashMap<>();
-        return dp(nums.length-1,nums,map);
+        if(nums.length == 0 || nums== null){
+            return 0;
+        }
+        if(nums.length == 1){
+            return nums[0];
+        }
+        int dp[] = new int[nums.length];
+        dp[0] = nums[0];
+        dp[1] = Math.max(nums[0],nums[1]);
+        for(int i =2;i<nums.length;i++){
+            dp[i] = Math.max(nums[i]+dp[i-2], dp[i-1]);
+        }
+        return dp[nums.length - 1];
     }
+
 }
